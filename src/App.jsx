@@ -21,12 +21,10 @@ const App = () => {
         setUser('employee')
         setLoggedInUserData(employee)
         localStorage.setItem('loggedInUser', JSON.stringify({role:'employee'}))
-        console.log(employee)
       } else if (admin){
         setUser('admin')
         setLoggedInUserData(admin)
         localStorage.setItem('loggedInUser', JSON.stringify({role:'admin'}))
-        console.log(admin)
       } 
       else{
         alert('Invalid Credentials')
@@ -40,7 +38,7 @@ alert('Failed to load data')
   
   return (
     <>
-    {!user ? <Login handleLogin = {handleLogin} /> : (user == 'admin' ?  <AdminDashboard /> : <EmployeeDashboard />) } 
+    {!user ? <Login handleLogin = {handleLogin} /> : (user == 'admin' ?  <AdminDashboard /> : <EmployeeDashboard data={loggedInUserData} />) } 
        
     </>
   )
