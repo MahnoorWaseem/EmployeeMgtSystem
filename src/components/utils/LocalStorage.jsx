@@ -1,6 +1,5 @@
 // once data is set in local storage.. it can be then placed at a central place called context, so that it can be fetched by everone easily.
 
-
 const employees = [
     {
         "id": 1,
@@ -8,15 +7,15 @@ const employees = [
         "email": "e@e.com",
         "password": "123",
         "taskCounts": {
-            "active": 2,
-            "newTask": 1,
-            "completed": 1,
-            "failed": 0
+            "active": 2, //currently working on it
+            "newTask": 0, //not yet started
+            "completed": 1, //completed tasks
+            "failed": 0 //failed tasks
         },
         "tasks": [
             {
                 "active": true,
-                "newTask": true,
+                "newTask": false,
                 "completed": false,
                 "failed": false,
                 "taskTitle": "Update website",
@@ -53,8 +52,8 @@ const employees = [
         "password": "123",
         "taskCounts": {
             "active": 1,
-            "newTask": 0,
-            "completed": 1,
+            "newTask": 1,
+            "completed": 0,
             "failed": 0
         },
         "tasks": [
@@ -70,8 +69,8 @@ const employees = [
             },
             {
                 "active": false,
-                "newTask": false,
-                "completed": true,
+                "newTask": true,
+                "completed": false,
                 "failed": false,
                 "taskTitle": "Design new feature",
                 "taskDescription": "Create mockups for the new feature",
@@ -86,25 +85,25 @@ const employees = [
         "email": "employee3@example.com",
         "password": "123",
         "taskCounts": {
-            "active": 2,
-            "newTask": 1,
-            "completed": 1,
-            "failed": 0
+            "active": 0,
+            "newTask": 2,
+            "completed": 0,
+            "failed": 1
         },
         "tasks": [
             {
-                "active": true,
-                "newTask": true,
+                "active": false,
+                "newTask": false,
                 "completed": false,
-                "failed": false,
+                "failed": true,
                 "taskTitle": "Prepare presentation",
                 "taskDescription": "Prepare slides for upcoming client presentation",
                 "taskDate": "2024-10-13",
                 "category": "Presentation"
             },
             {
-                "active": true,
-                "newTask": false,
+                "active": false,
+                "newTask": true,
                 "completed": false,
                 "failed": false,
                 "taskTitle": "Code review",
@@ -114,8 +113,8 @@ const employees = [
             },
             {
                 "active": false,
-                "newTask": false,
-                "completed": true,
+                "newTask": true,
+                "completed": false,
                 "failed": false,
                 "taskTitle": "Testing",
                 "taskDescription": "Test the latest build for bugs",
@@ -130,16 +129,16 @@ const employees = [
         "email": "employee4@example.com",
         "password": "123",
         "taskCounts": {
-            "active": 2,
-            "newTask": 1,
-            "completed": 0,
+            "active": 0,
+            "newTask": 0,
+            "completed": 2,
             "failed": 0
         },
         "tasks": [
             {
-                "active": true,
-                "newTask": true,
-                "completed": false,
+                "active": false,
+                "newTask": false,
+                "completed": true,
                 "failed": false,
                 "taskTitle": "Write documentation",
                 "taskDescription": "Update the project documentation",
@@ -147,9 +146,9 @@ const employees = [
                 "category": "Documentation"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": false,
-                "completed": false,
+                "completed": true,
                 "failed": false,
                 "taskTitle": "Set up CI/CD",
                 "taskDescription": "Implement continuous integration pipeline",
@@ -164,15 +163,15 @@ const employees = [
         "email": "employee5@example.com",
         "password": "123",
         "taskCounts": {
-            "active": 2,
-            "newTask": 1,
-            "completed": 1,
-            "failed": 0
+            "active": 1,
+            "newTask": 0,
+            "completed": 0,
+            "failed": 2
         },
         "tasks": [
             {
                 "active": true,
-                "newTask": true,
+                "newTask": false,
                 "completed": false,
                 "failed": false,
                 "taskTitle": "UI redesign",
@@ -183,18 +182,18 @@ const employees = [
             {
                 "active": false,
                 "newTask": false,
-                "completed": true,
-                "failed": false,
+                "completed": false,
+                "failed": true,
                 "taskTitle": "Deploy new build",
                 "taskDescription": "Deploy the latest build to production",
                 "taskDate": "2024-10-09",
                 "category": "DevOps"
             },
             {
-                "active": true,
+                "active": false,
                 "newTask": false,
                 "completed": false,
-                "failed": false,
+                "failed": true,
                 "taskTitle": "Client feedback",
                 "taskDescription": "Gather feedback from clients after product launch",
                 "taskDate": "2024-10-12",
@@ -207,11 +206,13 @@ const employees = [
 
 const admin = [{
     "id": 1,
+    "firstName": "Ahmed",
     "email": "admin1@example.com",
     "password": "123"
 },
 {
     "id": 2,
+    "firstName": "Ali",
     "email": "admin2@me.com",
     "password": "123"
 },

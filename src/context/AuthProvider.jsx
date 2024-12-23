@@ -8,6 +8,7 @@ const AuthProvider = ({children}) => {
     const [userData, setUserData] = useState(null)
 
     useEffect(() => {
+      console.log('auth provider use context')
      setLocalStorage()
      const {employees, admin} = getLocalStorage()
      setUserData({employees,admin})
